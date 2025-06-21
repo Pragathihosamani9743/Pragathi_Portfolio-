@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="profile-img">
+        <img id="profileImage" src="default-profile.png" alt="Profile Picture">
+        <label for="photoUpload" class="upload-btn">
+          <i class="fas fa-camera"></i>
+        </label>
+        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+      </div>
+      <h2>Pragathi H</h2>
+      <p>Software Developer</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link active"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="#certificates" class="nav-link"><i class="fas fa-certificate"></i> Certificates</a></li>
+        <li><a href="#resume" class="nav-link"><i class="fas fa-file-alt"></i> Resume</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="content">
+    <!-- About Section -->
+    <section id="about" class="content-section active">
+      <div class="section-header">
+        <h1>About Me</h1>
+        <div class="header-line"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-section">
+          <h3><i class="fas fa-user-circle"></i> Introduction</h3>
+          <p>Hello! I'm <strong>Pragathi H</strong>, a passionate Software Developer specializing in full-stack development and AI/ML. I’m currently pursuing a Bachelor’s degree in Information Science & Engineering and actively working on real-world projects.</p>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-address-book"></i> Contact Information</h3>
+          <div class="info-grid">
+            <div><i class="fas fa-envelope"></i> <a href="mailto:pragathihosamani9743@gmail.com">pragathihosamani9743@gmail.com</a></div>
+            <div><i class="fas fa-phone"></i> +91 9743992997</div>
+            <div><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka – 560064</div>
+            <div><i class="fab fa-linkedin"></i> <a href="#">LinkedIn</a></div>
+            <div><i class="fab fa-github"></i> <a href="#">GitHub</a></div>
+          </div>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-code"></i> Technical Skills</h3>
+          <div class="skills-grid">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React.js</span>
+            <span>Python</span><span>Java</span><span>C</span><span>SQL</span>
+            <span>MongoDB</span><span>Node.js</span><span>Express.js</span><span>AWS</span>
+            <span>Git</span><span>REST APIs</span><span>DSA</span>
+          </div>
+          
+          <div id="skillsList" class="skills-grid"></div>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+          <div class="experience-item">
+            <h4>Full Stack Web Development Intern</h4>
+            <p><strong>DigiPix Technologies</strong> (Dec 2024 – Mar 2025)</p>
+            <p>Worked on building responsive, real-world full-stack applications with React and Node.js.</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <ul class="education-list">
+            <li><strong>B.E – ISE</strong>, BMSIT Bengaluru – CGPA: 9.48 (2022–2026)</li>
+            <li><strong>PUC – Science</strong>, Sri Vidyniketan PU College – 93.33%</li>
+            <li><strong>Full-Stack Certificate</strong> – NxtWave Academy (Ongoing)</li>
+          </ul>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-certificate"></i> Certifications</h3>
+          <ul class="cert-list">
+            <li>AWS Cloud Computing Workshop</li>
+            <li>Full-Stack Development – NxtWave Academy</li>
+            <li>AI & ML – Infosys Springboard</li>
+          </ul>
+        </div>
+        <div class="about-section">
+          <h3><i class="fas fa-trophy"></i> Achievements</h3>
+          <ul class="achievement-list">
+            <li>2nd Place – PBL Competition: AI for Waste Management</li>
+            <li>District-Level Athlete – Kabaddi, Throwball</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section">
+  <div class="section-header">
+    <h1>Projects</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="projects-container">
+    <div class="projects-header">
+      <button id="addProjectBtn" class="add-project-btn">
+        <i class="fas fa-plus"></i> Add New Project
+      </button>
+    </div>
+    <div id="projectsList" class="projects-list">
+      <!-- Projects will be dynamically grouped into the following domains: -->
+      <!-- Full Stack (Node.js, React), Frontend, AI/ML, Python, IoT, Other -->
+    </div>
+  </div>
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add New Project</h2>
+        <span class="close">&times;</span>
+      </div>
+      <form id="projectForm">
+        <div class="form-group">
+          <label for="projectName">Project Name *</label>
+          <input type="text" id="projectName" required>
+        </div>
+        <div class="form-group">
+          <label for="projectDescription">Description *</label>
+          <textarea id="projectDescription" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="githubLink">GitHub Link</label>
+          <input type="url" id="githubLink">
+        </div>
+        <div class="form-group">
+          <label for="publishedLink">Published Link</label>
+          <input type="url" id="publishedLink">
+        </div>
+        <div class="form-group">
+          <label for="projectDomain">Domain *</label>
+          <select id="projectDomain" required>
+            <option value="">Select Domain</option>
+            <option value="Full Stack (Node.js, React)">Full Stack (Node.js, React)</option>
+            <option value="Frontend">Frontend</option>
+            <option value="AI/ML">AI/ML</option>
+            <option value="Python">Python</option>
+            <option value="IoT">IoT</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="content-section">
+      <div class="section-header">
+        <h1>Certificates</h1>
+        <div class="header-line"></div>
+      </div>
+      <div class="projects-container">
+        <div class="projects-header">
+          <button id="addCertificateBtn" class="add-project-btn">
+            <i class="fas fa-plus"></i> Add Certificate
+          </button>
+        </div>
+        <div id="certificatesList" class="projects-list"></div>
+      </div>
+      <div id="certificateModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add Certificate</h2>
+            <span class="close" id="closeCertModal">&times;</span>
+          </div>
+          <form id="certificateForm">
+            <div class="form-group">
+              <label for="certificateName">Certificate Name *</label>
+              <input type="text" id="certificateName" required>
+            </div>
+            <div class="form-group">
+              <label for="certificateCategory">Category *</label>
+              <select id="certificateCategory" required>
+                <option value="">Select</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Course">Course</option>
+                <option value="Other Activities">Other Activities</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="certificateImage">Certificate Image URL</label>
+              <input type="url" id="certificateImage">
+            </div>
+            <div class="form-group">
+              <label for="certificateDrive">Drive/View Link</label>
+              <input type="url" id="certificateDrive">
+            </div>
+            <div class="form-actions">
+              <button type="button" id="cancelCertBtn">Cancel</button>
+              <button type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="content-section">
+  <div class="section-header">
+    <h1>Resume</h1>
+    <div class="header-line"></div>
+  </div>
+  <p><a href="https://github.com/Pragathihosamani9743/Resume-/raw/main/resume.pdf" target="_blank">View Resume on GitHub</a></p>
+  <p><a href="resume.pdf" download>Download Resume (PDF)</a></p>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+      <div class="section-header">
+        <h1>Contact</h1>
+        <div class="header-line"></div>
+      </div>
+      <div class="contact-content">
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:pragathihosamani9743@gmail.com">pragathihosamani9743@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9743992997</p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Bangalore, Karnataka</p>
+        <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-link" target="_blank">linkedin.com/in/your-link</a></p>
+        <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/your-github" target="_blank">github.com/your-github</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
